@@ -42,20 +42,9 @@ get_header();
             </div>
           
           </div>
-          <form class="heading__form">
-            <div class="heading__form-title">
-              Заполните свои данные, чтобы получить бесплатную консультацию
-            </div>
-            <input type="text" class="heading__form-input" placeholder="Имя">
-            <div class="heading__form-wrapper">
-              <input type="text" class="heading__form-input" placeholder="Номер телефона">
-            </div>
-            <button class="heading__form-btn button">Отправить заявку</button>
-            <p class="heading__form-text">
-              Оставляя заявку на сайте вы соглашаетесь 
-              с политикой конфиденциальности
-            </p>
-          </form>
+          <div class="heading__form">
+            <?php echo do_shortcode('[contact-form-7 id="230" title="Форма"]')?>
+          </div>
         </div>
       </div>
    </div>
@@ -85,36 +74,37 @@ get_header();
     </div>
   </div>
  
+
   <div class="tourism">
     <div class="container">
       <h3 class="tourism__title">
-        Медицинский туризм в Турции для граждан Казахстана 
+        <?php the_field('glavnaya_pervyj_blok_zagolovok');?>
       </h3>
       <div class="tourism__inner">
         <div class="tourism__img">
-          <img src="./images/medical-tourism.jpg" alt="img">
+          <img src="<?php echo get_field('glavnaya_pervyj_blok_bolshoe_izobrazhenie')['url']?>" alt="img">
         </div>
         <div class="tourism__content">
           <div class="tourism__content-title">
-            Медицинский туризм в Турции для граждан Казахстана предлагает наша клиника Hisar. 
+            <?php the_field('glavnaya_pervyj_blok_podzagolovok');?> 
           </div>
           <p class="tourism__content-text">
-            В последние годы современная медицина активно развивается, ученые-исследователи используют в сфере лечения и обследования болезней инновационные технологии. Но со всего мира можно выделить лишь несколько стран, развитие медицины в которых можно назвать передовым. Наиболее подходящей страной для лечения жителей Казахстана и других стран СНГ считается Турция. Специфика и стоимость организации вашей медицинской поездки в Турцию в большей степени зависит от ваших предпочтений и нужд. 
+            <?php the_field('glavnaya_pervyj_blok_abzacz_odin');?> 
           </p>
           <blockquote class="tourism__content-blockquote">
-            Мы предоставляем услуги по организации лечения граждан Казахстана и других стран СНГ в нашей клинике от заболеваний разной степени. Мы создали сочетание современных технологий и принципов качественного и оперативного обслуживания. Hisar Intercontinental Hospital занимает площадь в 8 этажей общей площадью 35 000 квадратных метров. 
+            <?php the_field('glavnaya_pervyj_blok_czitata');?> 
           </blockquote>
           <p class="tourism__content-text">
-            Больница имеет прекрасный академический персонал и имеет 53 отделения различных специальностей, в том числе: ортопедии, здоровья позвоночника, акушерства и гинекологии, кардиологии, онкологии и гематологии, неврологии, хирургии, внутренних болезней и диагностики, и других. 
+            <?php the_field('glavnaya_pervyj_blok_abzacz_dva');?> 
           </p>
         </div>
       </div>
       <div class="tourism__bottom">
         <div class="tourism__bottom-img">
-          <img src="./images/medical-tourism-img.jpg" alt="img">
+          <img src="<?php echo get_field('glavnaya_pervyj_blok_malenkoe_izobrazhenie')['url']?>" alt="img">
         </div>
         <p class="tourism__bottom-text">
-          Многие наши клиенты, которые хотя бы раз воспользовались услугами по медицинскому обследованию в Турции остались настолько довольны, что теперь приезжают на профилактические обследования каждые полгода-год. Доктора в нашей клинике сейчас могут предоставить массу услуг, которые помогут удостовериться в вашем внутреннем состоянии, или выявить заболевания на ранних стадиях. Вы можете позвонить по номеру телефона, указанному на нашем сайте в разделе “контакты”. Наш сотрудник проконсультирует вас и ответит на все интересующие вас вопросы.
+            <?php the_field('glavnaya_pervyj_blok_abzacz_tri');?> 
         </p>
       </div>
     </div>
@@ -127,208 +117,32 @@ get_header();
       <div class="directions__inner">
         <div class="directions-block">
 
+
+              <?php
+                global $post;
+                $query = new WP_Query([
+                  'post_per_page' => '30',
+                  'post_type' => 'directions'
+                ]);
+                if($query->have_posts()){
+                  while($query->have_posts()){
+                    $query->the_post();
+              ?>
+
             <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-2.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Онкология</p>
+              <a href="<?php the_permalink();?>">
+                <img src="<?php the_post_thumbnail_url();?>" alt="img" class="directions-block__item-img">
+                <p class="directions-block__item-text"><?php the_title();?></p>
               </a>
             </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-3.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Пластическая хирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-4.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Гастроэнтерология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-5.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Дерматовенерология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-6.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Гинекология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-7.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Офтальмология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-8.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Урология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-9.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Эндокринология</p>
-              </a>
-            </li>
-          
-         
-         
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-10.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Превентивная медицина</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-11.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Нейрохирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-12.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Отоларингология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-13.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Гематология и онкогематология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-1.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Ортопедическая хирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-14.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Кардиология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-15.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Пульмонология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-16.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Реабилитационная медицина</p>
-              </a>
-            </li>
-          
-         
-          
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-17.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Висцеральная хирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-18.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Гинекологическая онкология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-19.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Гепатология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-20.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Кардиохирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-21.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Ревматология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-22.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Сосудистая хирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-23.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Челюстно-лицевая хирургия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-24.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Внутренняя медицина</p>
-              </a>
-            </li>
-          
-        
-        
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-25.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Диабетология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-26.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Лечение зависимостей</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-27.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Нефрология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-28.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Психосоматика</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-29.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Бариатрия</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-30.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Аллергология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-31.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Стоматология</p>
-              </a>
-            </li>
-            <li class="directions-block__item list-item">
-              <a href="#">
-                <img src="./images/directionsicon/directions-32.svg" alt="img" class="directions-block__item-img">
-                <p class="directions-block__item-text">Лучевая терапия</p>
-              </a>
-            </li>
-         
+                <?php }
+                }
+                    
+                    else{
+                        'Постов нет';
+                    } 
+                    wp_reset_postdata();
+                ?>
           
         </div>
         <button class="directions-block__btn">Показать ещё</button>
@@ -386,28 +200,28 @@ get_header();
       <div class="services__title">Дополнительные услуги</div>
       <div class="services__inner">
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-1.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-1.svg" alt="img" class="services__item-img">
           <div class="services__item-title">Устные переводы и сопровождение</div>
           <p class="services__item-text">
             Наши переводчики сопровождают и поддерживают пациентов в любом городе Европы.
           </p>
         </div>
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-2.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-2.svg" alt="img" class="services__item-img">
           <div class="services__item-title">Санитарная авиация и врачебное сопровождение</div>
           <p class="services__item-text">
             Мы организуем срочную транспортировку при помощи санитарной авиации.
           </p>
         </div>
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-3.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-3.svg" alt="img" class="services__item-img">
           <div class="services__item-title">Перевод медицинской документации</div>
           <p class="services__item-text">
             В DMU работают лучшие медицинские переводчики, которые качественно переведут любую документацию.
           </p>
         </div>
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-4.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-4.svg" alt="img" class="services__item-img">
           <div class="services__item-title">
             Трансфер и медицинская транспортировка
           </div>
@@ -416,21 +230,21 @@ get_header();
           </p>
         </div>
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-5.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-5.svg" alt="img" class="services__item-img">
           <div class="services__item-title">Второе мнение</div>
           <p class="services__item-text">
             Чтобы подтвердить диагноз и методы лечения, DMU поможет вам получить второе мнение у лучших врачей.
           </p>
         </div>
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-6.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-6.svg" alt="img" class="services__item-img">
           <div class="services__item-title">Корпоративное обслуживание</div>
           <p class="services__item-text">
             Оказываем полный спектр услуг по организации лечения для корпоративных клиентов, учитывая все пожелания и предоставляя необходимую отчетность.
           </p>
         </div>
         <div class="services__item">
-          <img src="./images/additional-services/additional-services-7.svg" alt="img" class="services__item-img">
+          <img src="<?php echo get_template_directory_uri()?>/assets/images/additional-services/additional-services-7.svg" alt="img" class="services__item-img">
           <div class="services__item-title">Проверка счетов</div>
           <p class="services__item-text">
             Мы проверяем все счета на соответствие цен и отсутствие комиссий.
@@ -443,14 +257,9 @@ get_header();
           <div class="calculation__inner-img">
             <img src="<?php echo get_template_directory_uri();?>./assets/images/services-doctor.png" alt="img">
           </div>
-          <form action="#" class="calculation__form">
-            <div class="calculation__form-title">Расчет стоимости</div>
-            <input type="tel" class="calculation__form-input" placeholder="Телефон" required>
-            <button class="calculation__form-btn button">Отправить заявку</button>
-            <p class="calculation__form-text">
-              * Точная стоимость зависит от сложности заболевания, необходимой диагностики, объема процедур и конкретной клиники. Отправив запрос на нашем сайте, вы получите предварительный расчет на электронную почту.
-            </p>
-          </form>
+          <div action="#" class="calculation__form">
+            <?php echo do_shortcode('[contact-form-7 id="231" title="Форма два"]');?>
+          </div>
         </div>
       </div>
 
@@ -462,14 +271,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  Проводят ли в Турции химиотерапию HIPEC и эффективна ли она?
+                  <?php the_field('vopros_odin');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                  <?php the_field('otvet_odin');?>
                   </p>
                 </div>
               </div>
@@ -477,15 +285,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  А в Турции тоже лечат предстательную железу по системе Холеп?
+                  <?php the_field('vopros_dva');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                      За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_dva');?>
                   </p>
                 </div>
               </div>
@@ -493,15 +299,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  Мне нужна артроскопия коленного сустава, есть в Турции хорошие специалисты? И можете сказать точную цену на эту процедуру?
+                  <?php the_field('vopros_tri');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_tri');?>
                   </p>
                 </div>
               </div>
@@ -510,15 +314,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  А в Турции есть хорошие врачи для лечения рака яичника?
+                  <?php the_field('vopros_chetyre');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_chetyre');?>
                   </p>
                 </div>
               </div>
@@ -527,15 +329,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  А вы работаете с пластическими хирургами Турции по телу?
+                  <?php the_field('vopros_pyat');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_pyat');?>
                   </p>
                 </div>
               </div>
@@ -544,15 +344,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  А в Турции тоже лечат предстательную железу по системе Холеп?
+                  <?php the_field('vopros_shest');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_shest');?>
                   </p>
                 </div>
               </div>
@@ -561,15 +359,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  Недавно стал стремительно терять зрение, но врачи не могут найти точную причину. Есть ли в Турции хорошие специалисты, к которым можно обратиться?
+                  <?php the_field('vopros_sem');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_sem');?>
                   </p>
                 </div>
               </div>
@@ -578,15 +374,13 @@ get_header();
             <div class="questions__wrapper">
               <div class="questions-accardion__btn">
                 <span class="questions-accardion__title">
-                  Можно ли в Турции получить качественную диагностику органов ЖКТ?
+                  <?php the_field('vopros_vosem');?>
                 </span>
               </div>
               <div class="questions-accardion__content">
                 <div class="questions-accardion__text">
                   <p>
-                    В 2021 году Турция вошла в ТОП-10 лидеров медицинского туризма по версии Medical Tourism Index: ежегодно местные госпитали выбирают 750 000 иностранных пациентов.
-
-                    За последние 10 лет лечение в клиниках Турции стало очень востребованным. За это время страна вложила более $30 млрд в развитие этого направления.
+                    <?php the_field('otvet_vosem');?>
                   </p>
                 </div>
               </div>
@@ -600,31 +394,31 @@ get_header();
   <div class="arthritis">
     <div class="container">
       <div class="arthritis__title">
-        Медицинский туризм в Стамбуле / Турция для граждан РК из Алматы, Астаны (Нур-Султана) и Шымкента 
+        <?php the_field('glavnaya_vtoroj_blok_zagolovok');?>
       </div>
      <div class="arthritis__block">
       <div class="arthritis__content">
         <div class="arthritis__content-title">
-          Медицинский туризм в Стамбуле / Турция для граждан РК из Алматы, Астаны (НурСултана), Шымкента и остальных городов Казахстана - это именно то, что мы помогаем организовать клиентам. 
+          <?php the_field('glavnaya_vtoroj_blok_podzagolovok');?>
         </div>
         <p class="arthritis__content-text">
-          В нашей клинике все клиенты всегда остаются довольны не только уровнем комфорта, но и качеством оказываемых услуг. При вашем желании мы можем корректировать некоторые детали медицинской поездки в Турцию. Качество оказанных процедур и обследований в Турции гарантируют доктора, имеющие большой опыт и международные награды. В нашей клинике работают настоящие профессионалы диагностики с многолетним опытом и наградами международного уровня. 
+          <?php the_field('glavnaya_vtoroj_blok_abzacz_odin');?>
         </p>
         <p class="arthritis__content-text">
-          <span>Среди болезней наших клиентов встречается как довольно распространенный артрит, </span> так и более опасные заболевания, вроде злокачественной опухоли мозга или кишечника. Но для каждого из них мы стараемся оказать помощь с наивысшим комфортом. Мы стараемся найти к каждому нашему клиенту индивидуальный подход, ведь тогда процесс лечения можно будет сделать лучше. В нашей клинике есть настоящие специалисты по диагностике с многолетним опытом и наградами на международном уровне.
+          <?php the_field('glavnaya_vtoroj_blok_abzacz_dva');?>
         </p>
       </div>
       <div class="arthritis__img">
-        <img src="./images/turce.jpg" alt="img">
+        <img src="<?php echo get_field('glavnaya_vtoroj_blok_bolshoe_izobrazhenie')['url']?>" alt="img">
       </div>
      </div>
 
      <div class="arthritis__bottom">
         <div class="arthritis__bottom-img">
-          <img src="./images/small-doctor.jpg" alt="img">
+          <img src="<?php echo get_field('glavnaya_vtoroj_blok_malenkoe_izobrazhenie')['url']?>" alt="img">
         </div>
         <p class="arthritis__bottom-text">
-          Доктора в нашей клинике сейчас могут предоставить массу услуг, которые помогут удостовериться в вашем внутреннем состоянии, или выявить заболевания на ранних стадиях. Для тех, кто обеспокоен неточным диагнозом, или не качественными процедурами лечения, которые могут вам предоставить в ближайшей больнице в вашем районе, обращение к нам - это настоящее спасение. Для нас важно, чтобы наши пациенты получили профессиональную помощь от врачей международного класса и могли вылечиться от своего недуга в комфортных условиях. Мы предлагаем услуги по организации медицинского обследования для жителей Казахстана и других стран СНГ в Турции.
+          <?php the_field('glavnaya_vtoroj_blok_abzacz_tri');?>
         </p>
      </div>
     </div>
@@ -640,13 +434,13 @@ get_header();
         <div class="algorithm__block">
           <div class="algorithm__item">
             <div class="algorithm__item-img">
-              <img src="./images/icon/algorithm-1.svg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/algorithm-1.svg" alt="img">
             </div>
             <p class="algorithm__item-text">Оценка проведения диагностики и лечения</p>
           </div>
           <div class="algorithm__item algorithm__item-top">
             <div class="algorithm__item-img">
-              <img src="./images/icon/algorithm-2.svg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/algorithm-2.svg" alt="img">
             </div>
             <p class="algorithm__item-text">
               Предварительная программа / расчет
@@ -654,7 +448,7 @@ get_header();
           </div>
           <div class="algorithm__item">
             <div class="algorithm__item-img">
-              <img src="./images/icon/algorithm-3.svg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/algorithm-3.svg" alt="img">
             </div>
             <p class="algorithm__item-text">
               Оказание содействия в приезде / получения визы
@@ -662,7 +456,7 @@ get_header();
           </div>
           <div class="algorithm__item algorithm__item-top">
             <div class="algorithm__item-img">
-              <img src="./images/icon/algorithm-4.svg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/algorithm-4.svg" alt="img">
             </div>
             <p class="algorithm__item-text">
               Прибытие пациента / диагностика и лечение
@@ -670,7 +464,7 @@ get_header();
           </div>
           <div class="algorithm__item">
             <div class="algorithm__item-img">
-              <img src="./images/icon/algorithm-5.svg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/algorithm-5.svg" alt="img">
             </div>
             <p class="algorithm__item-text">
               Выдача заключений и рекомендаций на языке пициента
@@ -678,7 +472,7 @@ get_header();
           </div>
           <div class="algorithm__item algorithm__item-top">
             <div class="algorithm__item-img">
-              <img src="./images/icon/algorithm-6.svg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/algorithm-6.svg" alt="img">
             </div>
             <p class="algorithm__item-text">
               Заявка на лечение / направление документов
@@ -806,7 +600,7 @@ get_header();
         <div class="selection-box__item">
           <div class="selection-box__inner">
             <div class="selection-box__item-img">
-              <img src="./images/selection-1.jpg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/selection-1.jpg" alt="img">
             </div>
             <p class="selection-box__item-text">
               <span>Бесплатный подбор клиник на период лечения.</span>
@@ -817,7 +611,7 @@ get_header();
         <div class="selection-box__item">
           <div class="selection-box__inner">
             <div class="selection-box__item-img">
-              <img src="./images/selection-2.jpg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/selection-2.jpg" alt="img">
             </div>
             <p class="selection-box__item-text">
               <span>Высококлассное лечение</span>
@@ -828,7 +622,7 @@ get_header();
         <div class="selection-box__item">
           <div class="selection-box__inner">
             <div class="selection-box__item-img">
-              <img src="./images/selection-3.jpg" alt="img">
+              <img src="<?php echo get_template_directory_uri()?>/assets/images/selection-3.jpg" alt="img">
             </div>
             <p class="selection-box__item-text">
               <span>Вы заключаете договор напрямую с клиникой.</span>
@@ -846,21 +640,21 @@ get_header();
       <div class="why__title">Почему выбирают нас?</div>
       <div class="why__block">
         <div class="why__block-item">
-          <img class="why__block-img" src="./images/why-1.png" alt="img">
+          <img class="why__block-img" src="<?php echo get_template_directory_uri()?>/assets/images/why-1.png" alt="img">
           <div class="why__block-title">Современный уровень медицины</div>
           <p class="why__block-text">
             Новейшие медицинские технологии, соответствующие мировым стандартам и развитая сеть медицинских центров с самым современным оборудованием
           </p>
         </div>
         <div class="why__block-item">
-          <img class="why__block-img" src="./images/why-2.png" alt="img">
+          <img class="why__block-img" src="<?php echo get_template_directory_uri()?>/assets/images/why-2.png" alt="img">
           <div class="why__block-title">Квалифицированные врачи</div>
           <p class="why__block-text">
             Медицинская школа Беларуси известна по всему миру: лучшие врачи, которые постоянонно повышают свою квалификацию.
           </p>
         </div>
         <div class="why__block-item">
-          <img class="why__block-img" src="./images/why-3.png" alt="img">
+          <img class="why__block-img" src="<?php echo get_template_directory_uri()?>/assets/images/why-3.png" alt="img">
           <div class="why__block-title">Полное сопровождение</div>
           <p class="why__block-text">
             Все вопросы сопровождения, такие, как трансфер, бронирование гостиниц и запись на прием к специалистам, на себя берет компания
@@ -882,20 +676,9 @@ get_header();
           </p>
         </div>
         <div class="request__block-form">
-          <form class="heading__form">
-            <div class="heading__form-title">
-              Заполните свои данные, чтобы получить бесплатную консультацию
-            </div>
-            <input type="text" class="heading__form-input" placeholder="Имя">
-            <div class="heading__form-wrapper">
-              <input type="text" class="heading__form-input" placeholder="Номер телефона">
-            </div>
-            <button class="heading__form-btn button">Отправить заявку</button>
-            <p class="heading__form-text">
-              Оставляя заявку на сайте вы соглашаетесь 
-              с политикой конфиденциальности
-            </p>
-          </form>
+          <div class="heading__form">
+          <?php echo do_shortcode('[contact-form-7 id="230" title="Форма"]')?>
+          </div>
         </div>
       </div>
     </div>
@@ -907,59 +690,83 @@ get_header();
       <div class="kinds-box">
         <div class="kinds-box__left">
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Консультация врачей специалистов</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_odin');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Лучевая терапия TRUEBEAM STX</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_dva');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Ортопедическая онкология</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_tri');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Эндоскопическая диагностика</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_chetyre');?> 
+            </a>
           </div>
         </div>
     
          
         <div class="kinds-box__center">
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Хирургическое лечение</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_pyat');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">IORT - интраоперационная лучевая терапия </a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_shest');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">HIPEC - педиатрическая онкология</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_sem');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Гипертермия и фотодинамическая терапия</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_vosem');?> 
+            </a>
           </div>
         </div>
       
         <div class="kinds-box__right">
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Гамма - нож</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_devyat');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Радионуклидная диагностика</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_desyat');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Химиотерпаия</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_odinadczat');?> 
+            </a>
           </div>
           <div class="kinds-box__item">
-            <img src="./images/icon/kinds-services.svg" alt="img">
-            <a href="#" class="kinds-box__link">Узи диагностика</a>
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+            <a href="#" class="kinds-box__link">
+              <?php the_field('glavnaya_usluga_dvenadczat');?> 
+            </a>
           </div>
         </div>
       
@@ -978,43 +785,43 @@ get_header();
       </p>
       <div class="organization__block">
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-1.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-1.svg" alt="img">
           <p class="organization__block-text">
             Доктора с мировым именем
           </p>
         </div>
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-2.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-2.svg" alt="img">
           <p class="organization__block-text">
             Предоставление переводчика
           </p>
         </div>
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-3.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-3.svg" alt="img">
           <p class="organization__block-text">
             Цены на 30-40 % ниже, чем в Германии и Израиле
           </p>
         </div>
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-4.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-4.svg" alt="img">
           <p class="organization__block-text">
             Лечебное и диагностическое оборудование соответствует мировым стандартам
           </p>
         </div>
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-5.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-5.svg" alt="img">
           <p class="organization__block-text">
             Протоколы лечения аналогичны стандартам ведущих клиник мира
           </p>
         </div>
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-6.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-6.svg" alt="img">
           <p class="organization__block-text">
             Бесплатный трансфер
           </p>
         </div>
         <div class="organization__block-item">
-          <img class="organization__block-img" src="./images/organization/organization-7.svg" alt="img">
+          <img class="organization__block-img" src="<?php echo get_template_directory_uri();?>/assets/images/organization/organization-7.svg" alt="img">
           <p class="organization__block-text">
             Круглосуточная поддержка 24/7
           </p>
@@ -1027,29 +834,29 @@ get_header();
   <div class="wellness">
     <div class="container">
       <div class="wellness__title">
-        Оздоровительный медтуризм в Турции по недорогим ценам 
+        <?php the_field('glavnaya_tretij_blok_zagolovok');?> 
       </div>
       <div class="wellness__block">
         <div class="wellness__img">
-          <img src="./images/health-tourism.jpg" alt="img">
+          <img src="<?php echo get_field('glavnaya_tretij_blok_izobrazhenie')['url'];?> " alt="img">
         </div>
         <div class="wellness__content">
           <p class="wellness__content-text">
-            В нашей клинике вы можете оформить заявку и получить оздоровительный медтуризм по небольшим ценам. В том случае, если вы больны, мы постараемся быстро оценить нынешнее состояние вашей болезни и при необходимости назначить направление на экстренное лечение. Мы гарантируем, что ваше медицинское обследование в нашей клинике в Турции будет проведено для вас качественно и комфортно. Больница Хисар является важным и мощным звеном в турецкой сети медицинских услуг, работающей с 2005 года на пересечении азиатского и европейского континентов - Умрания, финансовый и социальный центр в анатолийской части района Стамбула, а также 20-минутная езды от международного аэропорта Сабихи Гекчен и Босфора. 
+            <?php the_field('glavnaya_tretij_blok_abzacz_odin');?> 
           </p>
           <div class="wellness__content-subtitle">
-            Для того чтобы подробнее ознакомиться с возможностями лечения и профилактики в нашей клинике в Турции, вы можете записаться на онлайн-консультацию с нашими специалистами. 
+            <?php the_field('glavnaya_tretij_blok_podzagolovok');?> 
           </div>
         </div>
       </div>
 
       <div class="wellness__center">
         <p class="wellness__center-text">
-          Примечание: Чтобы узнать стоимость лечения,пришлите нам имеющиеся медицинские документы и укажите хронологию заболевания
+          <?php the_field('glavnaya_tretij_blok_primechanie');?> 
         </p>
       </div>
       <p class="wellness__bottom-text">
-        Наши клиенты остаются довольными буквально всем. Каждый наш клиент из стран СНГ сразу же отметил значительные различия между нахождением в больнице в своей стране и клинике в Турции. Нашими клиентами являются жители Казахстана и других стран СНГ, так что прочитать их отзывы вы сможете в оригинальном языке. Лечение серьезных болезней в Турции проводится профессиональными докторами, которые имеют за спиной многолетний опыт и сотни вылечившихся пациентов. Наши клиенты отметили точность постановки диагнозы и придирчивость местных докторов ко всем деталям результатов анализов. В нашей клинике вы сможете найти все, что хочется получить от медицинского учреждения мирового класса. Наши специалисты имеют за спиной многолетний опыт и всегда готовы подтвердить свой профессионализм на деле. Наши клиенты - это жители Казахстана и других стран СНГ, так что ознакомится именно с их мнением по поводу оказания услуг медицинского обследования в нашей клинике в Турции будет полезно.
+        <?php the_field('glavnaya_tretij_blok_abzacz_dva');?> 
       </p>
     </div>
   </div>
@@ -1215,19 +1022,19 @@ get_header();
   <div class="hisar">
     <div class="container">
       <div class="hisar__img">
-        <img src="./images/hisar-bg.jpg" alt="img">
+        <img src="<?php echo get_field('glavnaya_chetvyortyj_blok_izobrazhenie')['url'];?> " alt="img">
       </div>
       <div class="hisar__title">
-        Услуги медицинского туризма в Турции / Стамбуле для Казахстанцев 
+        <?php the_field('glavnaya_chetvyortyj_blok_zagolovok');?> 
       </div>
       <p class="hisar__text">
-        Мы предлагаем услуги медицинского туризма в Турции / Стамбуле для Казахстанцев, желающих поправить свое здоровье, или даже проверить, все ли в порядке. Большим преимуществом сотрудничества с нами клиенты считают то, что мы индивидуально работаем с каждым, подстраиваем условия перелета и проживания в Турции специально под возможности наших подопечных. Статистика по многим медицинским показателям в Турции говорит сама за себя. Лечение тут сейчас считается наиболее продуктивным и желаемым, ведь количество тех больных в стране, которым удается успешно противостоять лейкемии, раку, онкологиям и тому подобному, а то и добиться полного отступления болезни, сейчас быстро растет. Благодаря близости к важному центру Стамбула, наша больница превратилась в престижное медицинское учреждение, предоставляющее современные, комплексные и надежные медицинские услуги не только гражданам Турции, но и большому количеству иностранных пациентов в соответствии со стандартами качества JCI.
+        <?php the_field('glavnaya_chetvyortyj_blok_abzacz_odin');?> 
       </p>
       <blockquote class="hisar__reviews">
-        Больница Hisar Intercontinental объединяет под своей крышей бесценный медицинский персонал, основанный в 2005 году, чтобы обслуживать людей в турецком секторе здравоохранения и предоставлять качественную медицинскую помощь пациентам, которых мы называем нашими гостями. Наши клиенты отметили правильность диагноза и избирательность местных врачей по отношению ко всем деталям результатов анализов. 
+        <?php the_field('glavnaya_chetvyortyj_blok_czitata');?> 
       </blockquote>
       <p class="hisar__text">
-        В Турции в медицине используются передовые технологии, а комфорт самих пациентов ставят одной из важнейших задач. Лечение и медицинский туризм в Турции проходят эффективно и качественно, а уровень жизни там высокий. За помощью к нам обращаются клиенты и их родственники, которые имеют разные заболевания.
+        <?php the_field('glavnaya_chetvyortyj_blok_abzacz_dva');?> 
       </p>
     </div>
   </div>
@@ -1238,14 +1045,9 @@ get_header();
         <div class="calculation__inner-img">
           <img src="<?php echo get_template_directory_uri();?>./assets/images/services-doctor.png" alt="img">
         </div>
-        <form action="#" class="calculation__form">
-          <div class="calculation__form-title">Расчет стоимости</div>
-          <input type="tel" class="calculation__form-input" placeholder="Телефон" required>
-          <button class="calculation__form-btn button">Отправить заявку</button>
-          <p class="calculation__form-text">
-            * Точная стоимость зависит от сложности заболевания, необходимой диагностики, объема процедур и конкретной клиники. Отправив запрос на нашем сайте, вы получите предварительный расчет на электронную почту.
-          </p>
-        </form>
+        <div action="#" class="calculation__form">
+          <?php echo do_shortcode('[contact-form-7 id="231" title="Форма два"]');?>
+        </div>
       </div>
     </div>
   </div>
@@ -1258,7 +1060,7 @@ get_header();
       <div class="benefits__block">
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-1.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-1.jpg" alt="img">
           </div>
           <p class="benefits__block-text">
             Аккредитации международных организаций OECI, ESMO, JCI
@@ -1266,7 +1068,7 @@ get_header();
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-2.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-2.jpg" alt="img">
           </div>
           <p class="benefits__block-text">
             ТОП-10 MTQUA(Система оценки качества медицинского туризма)
@@ -1274,7 +1076,7 @@ get_header();
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-3.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-3.jpg" alt="img">
           </div>
           <p class="benefits__block-text">
             Сотрудничество с Медицинским центром Джонcа Хопкинса (США)
@@ -1282,7 +1084,7 @@ get_header();
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-4.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-4.jpg" alt="img">
           </div>
           <p class="benefits__block-text">
             Новейшие методы лечения рака
@@ -1290,25 +1092,25 @@ get_header();
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-5.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-5.jpg" alt="img">
           </div>
           <p class="benefits__block-text">Уникальное оборудование</p>
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-6.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-6.jpg" alt="img">
           </div>
           <p class="benefits__block-text">Врачи с мировым именем</p>
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-7.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-7.jpg" alt="img">
           </div>
           <p class="benefits__block-text">Бесплатные услуги перевода</p>
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-8.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-8.jpg" alt="img">
           </div>
           <p class="benefits__block-text">
             Бесплатный трансфериз аэропорта
@@ -1316,13 +1118,13 @@ get_header();
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-9.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-9.jpg" alt="img">
           </div>
           <p class="benefits__block-text">Помощь в размещении</p>
         </div>
         <div class="benefits__block-item">
           <div class="benefits__block-img">
-            <img src="./images/benefits/benefits-10.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/benefits/benefits-10.jpg" alt="img">
           </div>
           <p class="benefits__block-text">Бесплатное второе медицинское мнение</p>
         </div>
@@ -1331,6 +1133,7 @@ get_header();
   </div>
 
 
+  
   <div class="video">
     <div class="container">
       <div class="video__title">Видео</div>
@@ -1350,28 +1153,28 @@ get_header();
   <div class="price">
     <div class="container">
       <div class="price__title">
-        Цена и стоимость медицинского туризма в Турцию / Стамбул для пациентов из Казахстана 
+        <?php the_field('glavnaya_pyatyj_blok_zagolovok');?>  
       </div>
      <div class="price__block">
       <div class="price__img">
-        <img src="./images/price-doctor.jpg" alt="img">
+        <img src="<?php echo get_field('glavnaya_pyatyj_blok_bolshoe_izobrazhenie') ['url'];?>" alt="img">
       </div>
       <div class="price__content">
         <p class="price__content-text">
-          Цена и стоимость медицинского туризма в Турцию / Стамбул для пациентов из Казахстана в нашей клинике остается на низком уровне. Для нас важно, чтобы наши пациенты могли получить первоклассные медицинские услуги от квалифицированных специалистов, и при этом не потратить много денег. Здоровье клиента для нас - самое важное. В нашей клинике мы стараемся держать идеальный баланс между демократичной стоимостью медицинских туров для граждан Казахстана и высоким уровнем оказанных медицинских услуг, обследований всех видов. У нас работают настоящие профессионалы врачебного дела, имеющие многолетний опыт и образование лучших медицинских университетов мира. Обратившись к нам, вы получите плодотворную и недорогую поездку в нашу клинику в Турции, где вам окажут все необходимые медицинские услуги. 
+          <?php the_field('glavnaya_pyatyj_blok_abzacz_odin');?> 
         </p>
         <p class="price__content-text">
-          <span>Вы можете не сомневаться, что получите у нас помощь квалифицированных докторов,</span> имеющих практический опыт в клиниках многих стран Европы и множество положительных отзывов от пациентов. 
+          <?php the_field('glavnaya_pyatyj_blok_abzacz_dva');?> 
         </p>
       </div>
      </div>
 
      <div class="price__bottom">
         <div class="price__bottom-img">
-          <img src="./images/price-small-doctor.jpg" alt="img">
+          <img src="<?php echo get_field('glavnaya_pyatyj_blok_malenkoe_izobrazhenie') ['url'];?>" alt="img">
         </div>
         <p class="price__bottom-text">
-          Наша клиника работает уже много лет и за это время успела получить огромное количество хороших характеристик и отзывов от клиентов, в том числе, прибывших из Казахстана с целью медицинского туризма. Данное направление является только развивающимся в нашей стране, а мы входим в число передовых клиник, оказывающих услуги медицинского туризма. Стоимость медицинской туристической поездки, в том числе для граждан Казахстана, зависит от многих факторов, например, что именно требуется клиенту - обследование по установлению точного диагноза, или лечение болезни.
+          <?php the_field('glavnaya_pyatyj_blok_abzacz_tri');?> 
         </p>
      </div>
     </div>
@@ -1390,7 +1193,7 @@ get_header();
             </p>
           </div>
           <div class="liv__item-img">
-            <img src="./images/liv/liv-1.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-1.jpg" alt="img">
           </div>
         </div>
         <div class="liv__item">
@@ -1401,7 +1204,7 @@ get_header();
             </p>
           </div>
           <div class="liv__item-img">
-            <img src="./images/liv/liv-2.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-2.jpg" alt="img">
           </div>
         </div>
         <div class="liv__item">
@@ -1413,7 +1216,7 @@ get_header();
             </p>
           </div>
           <div class="liv__item-img">
-            <img src="./images/liv/liv-3.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-3.jpg" alt="img">
           </div>
         </div>
         <div class="liv__item">
@@ -1424,14 +1227,14 @@ get_header();
             </p>
           </div>
           <div class="liv__item-img">
-            <img src="./images/liv/liv-4.jpg" alt="img">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-4.jpg" alt="img">
           </div>
         </div>
       </div>
 
       <div class="liv__box">
         <div class="liv__box-img">
-          <img src="./images/liv/liv.jpg" alt="img">
+          <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv.jpg" alt="img">
         </div>
         <div class="liv__box-content">
           <div class="liv__box-title">Клиника LIV</div>
@@ -1570,25 +1373,25 @@ get_header();
   <div class="treatment">
     <div class="container">
       <div class="treatment__title">
-        Медицинские туры для лечения и оздоровления в Турцию / Стамбул из Казахстана: Алматы, Астаны (Нур-Султана) и Шымкента  
+        <?php the_field('glavnaya_shestoj_blok_zagolovok');?> 
       </div>
      <div class="treatment__block">
       <div class="treatment__content">
         <p class="treatment__content-text">
-          Медицинские туры для лечения и оздоровления в Турцию / Стамбул из Алматы, Астаны (Нурсултана), Шымкента и остальных городов Казахстана. Обращайтесь к нам за медицинским туром в одну из самых престижных клиник Турции. Сотрудничество с нами имеет множество преимуществ: кто-то отмечает для себя небольшую стоимость, кто-то замечает, что мы подбираем для каждого клиента индивидуальные решения, которые были бы удобны конкретно для него. 
+          <?php the_field('glavnaya_shestoj_blok_abzacz_odin');?> 
         </p>
         <p class="treatment__content-text">
-          <span>Мы заботимся о том, чтобы каждый клиент по прибытии в нашу страну без проблем добрался и разместился в нашей клинике. </span>Наши доктора окажут вам услуги наивысшего уровня, поскольку имеют большой опыт и квалификацию наивысшего уровня. Обратившись в нашу клинику, вы сможете оказаться в надежных руках опытных докторов, которые безошибочно определят ваш диагноз и начнут лечение без промедлений. Вы можете найти о нас массу положительных отзывов в интернете, что в очередной раз подтверждает наш высокий авторитет. Если вам нужен медицинский тур для лечения и оздоровления в Турции, вы можете позвонить нам, или написать письмо на электронную почту. 
+          <?php the_field('glavnaya_shestoj_blok_abzacz_dva');?> 
         </p>
       </div>
       <div class="treatment__img">
-        <img src="./images/turce-doctor.jpg" alt="img">
+        <img src="<?php echo get_field('glavnaya_shestoj_blok_izobrazhenie')['url'];?> " alt="img">
       </div>
      </div>
 
      <blockquote class="treatment__reviews">
       <p>
-        Мы оперативно изучим данные, которые вы пришлете и постараемся составить для вас медицинский тур, и при этом учесть каждое ваше предпочтение и примечание. Наша клиника работает с иностранными пациентами уже много лет, в последнее время к нам стали приезжать клиенты по медицинским турам. Они получают возможность воспользоваться квалифицированной медицинской помощью по доступной цене. Для нас важно, чтобы все клиенты получили качественные медицинские услуги, в которых они нуждаются.
+        <?php the_field('glavnaya_shestoj_blok_czitata');?> 
       </p>
      </blockquote>
     </div>
@@ -1714,20 +1517,9 @@ get_header();
             </div>
           </div>
           <div class="request-bottom__form">
-            <form class="heading__form">
-              <div class="heading__form-title">
-                Заполните свои данные, чтобы получить бесплатную консультацию
-              </div>
-              <input type="text" class="heading__form-input" placeholder="Имя">
-              <div class="heading__form-wrapper">
-                <input type="text" class="heading__form-input" placeholder="Номер телефона">
-              </div>
-              <button class="heading__form-btn button">Отправить заявку</button>
-              <p class="heading__form-text">
-                Оставляя заявку на сайте вы соглашаетесь 
-                с политикой конфиденциальности
-              </p>
-            </form>
+            <div class="heading__form">
+            <?php echo do_shortcode('[contact-form-7 id="230" title="Форма"]')?>
+            </div>
           </div>
         </div>
       </div>

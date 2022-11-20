@@ -2,7 +2,44 @@
 .header__left {
     width: 390px;
 }
+.search_page{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .active{
+    color: #143586;
+}
+.directions-block{
+    justify-content: center;
+}
+.treatment-slider__gynecology{
+    margin-top: 30px;
+}
+.gynecology__btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 250px;
+   padding: 15px;
+    border: none;
+    text-align: center;
+    background: #F6C443;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+}
+.breadcrumbs{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.wpcf7 form.sent .wpcf7-response-output{
+    color: #000;
+}
+.kb_title{
     color: #143586;
 }
 .footer .menu__list-item{
@@ -20,4 +57,18 @@
 }
 .slider-doctor__block-item{
     height: 470px;
+}
+.search_page{
+    line-height: 1;
+}
+@media(max-width:550px){
+    .header__form-btn::before{
+        left: 250px;
+    }
+    .nav-icon::before{
+        background:none;
+    }
+    .header__form-input{
+        margin-left: 10px;
+    }
 }

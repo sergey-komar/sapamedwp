@@ -21,24 +21,22 @@
       <div class="header__center">
           <div class="header__center-top">
             <div class="header__center-block">
-              <form action="#" class="header__form">
-                <div class="header__form-row">
-                  <button class="header__form-btn"></button>
-                  <input type="text" class="header__form-input" placeholder="Искать врача или специальность" required>
-                </div>
-              </form>
+              <?php if ( ! dynamic_sidebar('sidebar-blog') ) : ?>
+                <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+              <?php endif; ?>
               <p class="header__center-address"><?php the_field('gorod_v_shapke','option');?></p>
             </div>
           </div>
           <div class="header__center-bottom">
             
             <nav class="menu">
-              <form action="#" class="header-mobile__form">
+              <div action="#" class="header-mobile__form">
                 <div class="header-mobile__form-row">
-                  <button class="header-mobile__form-btn"></button>
-                  <input type="text" class="header-mobile__form-input" placeholder="Искать врача или специальность" required>
+                  <?php if ( ! dynamic_sidebar('sidebar-blog') ) : ?>
+                  <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+                  <?php endif; ?>
                 </div>
-              </form>
+              </div>
                       <?php
                         wp_nav_menu(
                             array(
