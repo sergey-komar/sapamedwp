@@ -9,7 +9,7 @@ get_header();
 	    </div>
     </div>
                
-    <section class="heading">
+      <section class="heading">
         <div class="container">
           <div class="heading__inner">
             <div class="heading__inner-wrapper">
@@ -158,27 +158,27 @@ get_header();
       <div class="medicine-hizar treatment-hizar">
         <div class="container">
             <div class="medicine-hizar__title">
-                Лечение онкологии и рака в Турции для граждан Казахстана 
+              <?php the_field('napravlenie_pervyj_blok_zagolovok');?> 
             </div>
             <div class="medicine-hizar__block">
                 <div class="medicine-hizar__block-title">
-                    Мы предлагаем туристические поездки 
+                  <?php the_field('napravlenie_pervyj_blok_podzagolovok_odin');?>  
                 </div>
                 <p class="medicine-hizar__block-text">
-                    целью которых является лечение онкологии и рака в Турции для граждан Казахстана. Для нас важно, чтобы наши пациенты получали первоклассные медицинские услуги от квалифицированных специалистов и при этом не тратили много денег. Здоровье клиента является главным приоритетом для каждого из наших специалистов. В нашей больнице мы стараемся соблюдать идеальный баланс между демократичной стоимостью медицинских туров для граждан Казахстана и высоким уровнем предоставляемых медицинских услуг и всевозможных обследований. 
+                  <?php the_field('napravlenie_pervyj_blok_abzacz_odin');?> 
                 </p>
             </div>
                 <div class="medicine-hizar__box">
                     <div class="medicine-hizar__img">
-                        <img src="./images/page-treatment/treatment-lechenie.jpg" alt="img">
+                        <img src="<?php echo get_field('napravlenie_pervyj_blok_izobrazhenie')['url'];?> " alt="img">
                     </div>
 
                     <div class="medicine-hizar__content">
                         <div class="medicine-hizar__content-subtitle">
-                            Мы стараемся найти индивидуальный подход к каждому 
+                          <?php the_field('napravlenie_pervyj_blok_podzagolovok_dva');?>  
                         </div>
                         <p class="medicine-hizar__content-text">
-                            из наших клиентов, потому что тогда процесс лечения может быть проведен лучше. Мы предлагаем услуги по организации лечения граждан Казахстана и других стран СНГ в нашей больнице различной степени тяжести. Мы создали сочетание современных технологий и принципов для качественного и быстрого обслуживания. Многие из наших клиентов, которые прошли хотя бы один медицинский осмотр в Турции, настолько довольны, что теперь приезжают на осмотр каждые шесть месяцев или ежегодно.    
+                          <?php the_field('napravlenie_pervyj_blok_abzacz_dva');?>  
                         </p>
                     </div>
                 </div>
@@ -186,15 +186,15 @@ get_header();
 
             <div class="medicine-hizar__footer">
                 <div class="medicine-hizar__footer-img">
-                    <img src="./images/page-medicine/icon-medicine/medicine-krug.svg" alt="img">
+                    <img src="<?php echo get_field('napravlenie_pervyj_blok_izobrazhenie_czitata')['url'];?>" alt="img">
                 </div>
                 <p class="medicine-hizar__footer-text treatment-hizar__footer-text" >
-                    Для тех, кто беспокоится о неточном диагнозе или некачественном лечении, которое может быть предложено вам в ближайшей больнице в вашем регионе, обращение к нам - настоящая палочка-выручалочка. 
+                  <?php the_field('napravlenie_pervyj_blok_czitata');?> 
                 </p>
             </div>
 
             <p class="treatment-hizar__text">
-                Для нас важно, чтобы наши пациенты получали профессиональную помощь от международных врачей и могли оправиться от своей болезни в комфортных условиях. Если вам нужна медицинская поездка в Турцию для лечения и выздоровления, вы можете позвонить нам или написать по электронной почте. Мы немедленно рассмотрим предоставленную вами информацию и постараемся организовать для вас медицинскую поездку с учетом всех ваших предпочтений и комментариев.
+              <?php the_field('napravlenie_pervyj_blok_abzacz_tri');?> 
             </p>
         </div>
       </div>
@@ -218,28 +218,27 @@ get_header();
       <div class="wellness">
         <div class="container">
           <div class="wellness__title">
-            Лечение онкологических заболеваний и раковых опухолей в Стамбуле / Турция для граждан РК из Алматы, Астаны (Нур-Султана) и Шымкента  
+            <?php the_field('napravleniya_vtoroj_blok_zagolovok');?>
           </div>
           <div class="wellness__block medicine-wellness__block">
             <div class="wellness__img medicine-wellness__img">
-              <img src="./images/page-medicine/medicine-bilet.jpg" alt="img">
+              <img src="<?php echo get_field('napravleniya_vtoroj_blok_izobrazhenie')['url'];?>" alt="img">
             </div>
             <div class="wellness__content medicine-wellness__content">
               <p class="wellness__content-text medicine-wellness__content-text">
-                <span>Лечение онкологических заболеваний и раковых опухолей в Стамбуле / Турция для граждан РК из Алматы, Астаны (Нурсултана), Шымкента и остальных городов Казахстана</span> — это то, чем наша клиника Хисар занимается много лет. Вы можете позвонить по номеру телефона, указанному в разделе контактов нашего веб-сайта. Наш сотрудник проконсультирует вас и ответит на все ваши вопросы. В нашей больнице все клиенты всегда довольны не только комфортом, но и качеством предоставляемых услуг. При желании мы можем настроить некоторые детали медицинской поездки в Турцию. Качество процедур и обследований, предлагаемых в Турции, гарантируется врачами с многолетним опытом работы и международными наградами. 
+                <?php the_field('napravleniya_vtoroj_blok_abzacz_odin');?>
               </p>
             </div>
           </div>
     
           <p class="wellness__bottom-text medicine-wellness__bottom-text treamtent-wellness__bottom-text">
-            <span>В нашей больнице работают настоящие специалисты</span><br>
-
-            диагносты с многолетним опытом работы и международными наградами. Среди заболеваний наших клиентов есть довольно распространенный артрит, а также более опасные заболевания, такие как злокачественная опухоль головного мозга или кишечника. Но для каждого из них мы стараемся помочь с максимально возможным удобством. Вы можете быть уверены, что вас поддержат квалифицированные врачи с практическим опытом работы в клиниках многих европейских стран и множеством положительных отзывов от пациентов. 
+          <span> <?php the_field('napravleniya_vtoroj_blok_podzagolovok');?></span><br>
+            <?php the_field('napravleniya_vtoroj_blok_abzacz_dva');?>
           </p>
 
           <div class="wellness__center treatment-hizar">
             <blockquote class="hisar__reviews medicine-hisar ">
-                Наша клиника работает уже много лет и за это время получила много хороших качеств и отзывов от клиентов, в том числе и тех, кто приехал из Казахстана с целью медицинского туризма. Мы предоставляем услуги медицинского скрининга для жителей Казахстана и других стран СНГ в Турции. Наши врачи предоставят вам услуги самого высокого уровня, так как они обладают огромным опытом и квалификацией на самом высоком уровне. Обратившись в нашу клинику, вы можете быть в надежных руках опытных врачей, которые точно определят ваш диагноз и немедленно начнут лечение. В Турции в медицине используются передовые технологии, и комфорт самих пациентов является одной из важнейших задач.
+                <?php the_field('napravleniya_vtoroj_blok_czitata');?>
               </blockquote>
           </div>
         </div>
@@ -313,18 +312,18 @@ get_header();
             <div class="triangle__inner">
                 <div class="triangle__inner-content triangle-treatment__inner-content">
                     <div class="triangle__inner-title">
-                        Лечение онкологии и раковых опухолей в Турции по недорогим ценам
+                      <?php the_field('napravleniya_tretij_blok_zagolovok');?>
                     </div>
                     <div class="triangle__inner-subtitle">
-                        Лечение онкологии и раковых опухолей в Турции по недорогим ценам 
+                      <?php the_field('napravleniya_tretij_blok_podzagolovok');?>
                     </div>
                     <p class="triangle__inner-content triangle-treatment__inner-content">
-                        мы предлагаем Вам организовать для вас туристическую поездку, где вы сможете пройти лечение онкологии и раковых опухолей в Турции в одной из лучших клиник Турции, которая сочетает в себе передовые технологии в медицине и профессиональных врачей. Для нас важно, чтобы наши пациенты получали первоклассные медицинские услуги от квалифицированных специалистов и при этом не тратили много денег. Здоровье клиента стоит на первом месте для каждого из наших врачей-специалистов. 
+                      <?php the_field('napravleniya_tretij_blok_abzacz');?>
                     </p>
                 </div>
 
                 <div class="triangle__inner-img triangle-treatment__inner-img">
-                    <img src="./images/page-treatment/treatment-8.jpg" alt="img">
+                    <img src="<?php echo get_field('napravleniya_tretij_blok_izobrazhenie')['url'];?>" alt="img">
                 </div>
             </div>
         </div>
@@ -443,33 +442,33 @@ get_header();
       <div class="arthritis arthritis-medicine">
         <div class="container">
           <div class="arthritis__title">
-            Услуги по лечению рака и онкологических заболеваний в Турции / Стамбуле для Казахстанцев
+            <?php the_field('napravleniya_chetvyortyj_blok_zagolovok');?>
           </div>
          <div class="arthritis__block arthritis-medicine__block">
           <div class="arthritis__content">
             <div class="arthritis__content-title">
-                Мы уже много лет занимаемся услугами по лечению рака и онкологических заболеваний в Турции / Стамбуле для граждан Казахстанцев. 
+              <?php the_field('napravleniya_chetvyortyj_blok_podzagolovok');?>
             </div>
             <p class="arthritis__content-text">
-                В последние годы современная медицина активно развивается, исследователи используют инновационные технологии в области лечения и изучения заболеваний. Но со всего мира есть несколько стран, где развитие медицины можно назвать передовым. Турция считается наиболее подходящей страной для общения с жителями Казахстана и других стран СНГ. 
+              <?php the_field('napravleniya_chetvyortyj_blok_abzacz_odin');?>
             </p>
           </div>
           <div class="arthritis__img">
-            <img src="./images/page-treatment/treatment-1.jpg" alt="img">
+            <img src="<?php echo get_field('napravleniya_chetvyortyj_blok_izobrazhenie_bolshoe')['url'];?>" alt="img">
           </div>
          </div>
     
          <div class="arthritis__bottom">
             <div class="arthritis__bottom-img">
-              <img src="./images/medical-tourism-img.jpg" alt="img">
+              <img src="<?php echo get_field('napravleniya_chetvyortyj_blok_izobrazhenie_malenkoe')['url'];?>" alt="img">
             </div>
             <p class="arthritis__bottom-text arthritis-medicine__bottom-text">
-                Врачи нашей больницы теперь могут предложить вам широкий спектр услуг для проверки вашего внутреннего состояния или выявления заболеваний на ранней стадии. Клиенты видят большое преимущество работы с нами в том, что мы индивидуально подходим к каждому человеку и адаптируем условия перелета и пребывания в Турции именно к возможностям наших станций. Лечение здесь в настоящее время считается наиболее плодотворным и востребованным лечением, поскольку число пациентов в стране, которые могут успешно противостоять лейкемии, раку, онкологии и тому подобному или даже полностью снизить заболеваемость, в настоящее время быстро растет.  
+              <?php the_field('napravleniya_chetvyortyj_blok_abzacz_dva');?>
             </p>
          </div>
 
          <p class="arthritis-medicine__text arthritis-medicine__text">
-            Детали и стоимость организации вашей медицинской поездки в Турцию во многом зависят от ваших предпочтений и потребностей. Наша клиника работает с пациентами, которые хотят приехать из разных стран, в том числе и из Казахстана. Мы стремимся предоставлять качественные и продуктивные медицинские услуги всем заинтересованным клиентам, которые работают с нами.
+            <?php the_field('napravleniya_chetvyortyj_blok_abzacz_tri');?>
          </p>
         </div>
       </div>
@@ -709,50 +708,50 @@ get_header();
       <div class="medical-examination">
         <div class="container">
             <div class="medical-examination__title">
-                Цена и стоимость лечения рака и онкологических заболеваний в Турции / Стамбуле для пациентов из Казахстана
+              <?php the_field('napravleniya_pyatyj_blok_zagolovok');?>
             </div>
             <div class="medical-examination__inner">
                 <div class="medical-examination__item">
                     <div class="medical-examination__item-img">
-                        <img src="./images/page-treatment/treatment-2.jpg" alt="img">
+                        <img src="<?php echo get_field('napravleniya_pyatyj_blok_izobrazhenie_odin')['url'];?>" alt="img">
                     </div>
                     <div class="medical-examination__item-title">
-                        Цена и стоимость лечения рака и онкологических заболеваний в Турции / Стамбуле для пациентов из Казахстана в нашей клинике держится на низком уровне.
+                      <?php the_field('napravleniya_pyatyj_blok_podzagolovok_odin');?>
                     </div>
                     <p class="medical-examination__item-text">
-                        Свяжитесь с нами, чтобы забронировать медицинский тур в одну из самых престижных клиник Турции. Мы гарантируем, что каждый клиент прибывает и остается в нашей клинике без каких-либо проблем по прибытии в нашу страну.  
+                      <?php the_field('napravleniya_pyatyj_blok_tekst_odin');?>
                     </p>
                 </div>
                 <div class="medical-examination__item">
                     <div class="medical-examination__item-img">
-                        <img src="./images/page-treatment/treatment-3.jpg" alt="img">
+                        <img src="<?php echo get_field('napravleniya_pyatyj_blok_izobrazhenie_dva')['url'];?>" alt="img">
                     </div>
                     <div class="medical-examination__item-title">
-                        Больница Хисар является важным и сильным членом сети здравоохранения Турции, которая работает с 2005 года
+                      <?php the_field('napravleniya_pyatyj_blok_podzagolovok_dva');?>
                     </div>
                     <p class="medical-examination__item-text">
-                        На перекрестке азиатского и европейского континентов в Умании, финансовом и социальном центре в анатолийской части Стамбула, в 20 минутах езды от международного аэропорта имени Сабихи Гекчен и Босфора. Мы позаботимся о том, чтобы ваше медицинское обследование в нашей больнице в Турции было проведено эффективно и удобно для вас.  
+                      <?php the_field('napravleniya_pyatyj_blok_tekt_dva');?>
                     </p>
                 </div>
                 <div class="medical-examination__item">
                     <div class="medical-examination__item-img">
-                        <img src="./images/page-treatment/treatment-4.jpg" alt="img">
+                        <img src="<?php echo get_field('napravleniya_pyatyj_blok_izobrazhenie_tri')['url'];?>" alt="img">
                     </div>
                     <div class="medical-examination__item-title">
-                        Наши клиенты находятся в Казахстане и других странах СНГ, поэтому вы можете прочитать их отзывы на языке оригинала.
+                      <?php the_field('napravleniya_pyatyj_blok_podzagolovok_tri');?>
                     </div>
                     <p class="medical-examination__item-text">
-                        Лечение серьезных заболеваний в Турции проводится профессиональными врачами с многолетним опытом работы и сотнями пациентов, пролеченных за их спиной. Наши клиенты отметили точность диагноза и заботу местных врачей о каждой детали результатов анализов. В нашей больнице вы найдете все, что можно было бы ожидать от первоклассного медицинского учреждения.
+                      <?php the_field('napravleniya_pyatyj_blok_tekst_tri');?>
                     </p>
                 </div>
             </div>
 
             <div class="treatment-examination__bottom">
                 <div class="treatment-examination__bottom-img">
-                    <img src="./images/page-treatment/treatment-icon1.svg" alt="img">
+                    <img src="<?php echo get_field('napravleniya_pyatyj_blok_izobrazhenie_czitaty')['url'];?>" alt="img">
                 </div>
                 <p class="medical-examination__text treatment-examination__text">
-                    Чтобы узнать больше о вариантах лечения и профилактики в нашей больнице в Турции, вы можете заказать онлайн-консультацию у наших специалистов. Наши клиенты всем довольны. Каждый из наших клиентов из стран СНГ сразу же заметил существенные различия между пребыванием в больнице в их стране и посещением клиники в Турции. 
+                  <?php the_field('napravleniya_pyatyj_blok_czitata');?>
                 </p>
             </div>
            
@@ -766,59 +765,59 @@ get_header();
           <div class="kinds-box">
             <div class="kinds-box__left">
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Консультация врачей специалистов</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_pervaya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Лучевая терапия TRUEBEAM STX</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_vtoraya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Ортопедическая онкология</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_tretya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Эндоскопическая диагностика</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_chetvyortaya');?></a>
               </div>
             </div>
         
              
             <div class="kinds-box__center">
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Хирургическое лечение</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_pyataya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">IORT - интраоперационная лучевая терапия </a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_shestaya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">HIPEC - педиатрическая онкология</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_sedmaya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Гипертермия и фотодинамическая терапия</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_vosmaya');?></a>
               </div>
             </div>
           
             <div class="kinds-box__right">
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Гамма - нож</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_devyataya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Радионуклидная диагностика</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_desyataya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Химиотерпаия</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_odinadczataya');?></a>
               </div>
               <div class="kinds-box__item">
-                <img src="./images/icon/kinds-services.svg" alt="img">
-                <a href="#" class="kinds-box__link">Узи диагностика</a>
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/icon/kinds-services.svg" alt="img">
+                <a href="#" class="kinds-box__link"><?php the_field('napravleniya_vidy_uslug_dvenadczataya');?></a>
               </div>
             </div>
           
@@ -1067,11 +1066,11 @@ get_header();
         <div class="container">
           <div class="video__title">Видео</div>
           <div class="video__block">
-            <?php if(have_rows('video')) : while(have_rows('video')) : the_row(); ?>
-            <a href="<?php the_sub_field('ssylka_na_video');?>" class="video__item">
+            <?php if(have_rows('napravleniya_video_kottent')) : while(have_rows('napravleniya_video_kottent')) : the_row(); ?>
+            <a href="<?php the_sub_field('napravleniya_video_ssylka');?>" class="video__item">
                 <div class="video__item-img">
-                <img src="<?php the_sub_field('izobrazhenie_video');?>" alt="img">
-                <p class="video__item-text"><?php the_sub_field('zagolovok_video');?></p>
+                <img src="<?php the_sub_field('napravleniya_video_izobrazhenie');?>" alt="img">
+                <p class="video__item-text"><?php the_sub_field('napravleniya_video_tekst');?></p>
                 </div>
             </a>
             <?php endwhile; endif; ?>
@@ -1123,7 +1122,7 @@ get_header();
                     </p>
                   </div>
                   <div class="liv__item-img">
-                    <img src="./images/liv/liv-1.jpg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-1.jpg" alt="img">
                   </div>
                 </div>
                 <div class="liv__item">
@@ -1134,7 +1133,7 @@ get_header();
                     </p>
                   </div>
                   <div class="liv__item-img">
-                    <img src="./images/liv/liv-2.jpg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-2.jpg" alt="img">
                   </div>
                 </div>
                 <div class="liv__item">
@@ -1146,7 +1145,7 @@ get_header();
                     </p>
                   </div>
                   <div class="liv__item-img">
-                    <img src="./images/liv/liv-3.jpg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-3.jpg" alt="img">
                   </div>
                 </div>
                 <div class="liv__item">
@@ -1157,7 +1156,7 @@ get_header();
                     </p>
                   </div>
                   <div class="liv__item-img">
-                    <img src="./images/liv/liv-4.jpg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-4.jpg" alt="img">
                   </div>
                 </div>
               </div>
@@ -1218,32 +1217,40 @@ get_header();
       <div class="survey survey-treatment">
         <div class="container">
             <div class="survey__title">
-                Обследование и лечение в Турции для граждан Казахстана
+              <?php the_field('napravleniya_shestoj_blok_zagolovok');?>
             </div>
             <div class="survey__inner">
                 <div class="survey__item">
                     <p class="survey__item-text">
-                        Медицинские туры для лечения онкологии и раковых заболеваний в Турцию / Стамбул из Казахстана: Алматы, Астаны (Нурсултана), Шымкента и других городов Казахстана. Медицинский туризм в Турции эффективен и качественен, соответствует уровню жизни. Клиенты и их близкие, страдающие различными заболеваниями, обращаются к нам за помощью. В нашей клинике Вы гарантированно получите качественную медицинскую помощь, оказываемую только квалифицированными врачами с большим опытом работы с турецкими и иностранными гражданами. 
+                      <?php the_field('napravleniya_shestoj_blok_tekst_odin');?>
                     </p>
                     <div class="survey__item-img survey__item-img--order">
-                        <img src="./images/page-treatment/treatment-5.jpg" alt="img">
+                        <img src="<?php echo get_field('napravleniya_shestoj_blok_izobrazhenie_odin')['url'];?>" alt="img">
                     </div>
                 </div>
                 <div class="survey__item">
                     <div class="survey__item-img">
-                        <img src="./images/page-treatment/treatment-6.jpg" alt="img">
+                        <img src="<?php echo get_field('napravleniya_shestoj_blok_izobrazhenie_dva')['url'];?>" alt="img">
                     </div>
                     <p class="survey__item-text">
-                        Наша больница готова организовать туристическую поездку в Турцию для медицинской диагностики и лечения. Наши специалисты имеют многолетний профессиональный опыт и всегда готовы продемонстрировать свой профессионализм на практике. Нашими клиентами являются жители Казахстана и других стран СНГ, поэтому нам полезно узнать ваше мнение о том, как мы можем предоставлять медицинские услуги в нашей больнице в Турции. Мы нанимаем настоящих медицинских специалистов с многолетним опытом и образованием в лучших медицинских университетах мира. 
+                      <?php the_field('napravleniya_shestoj_blok_tekst_dva');?>
                     </p>
                 </div>
                 <div class="survey__item">
                     <p class="survey__item-text">
-                        Обратившись к нам, вы получите плодотворную и доступную поездку в нашу клинику в Турции, где получите все необходимые медицинские услуги. Это направление развивается только в нашей стране, и мы входим в число ведущих клиник, предоставляющих услуги медицинского туризма. Наша клиника Хисар специализируется на лечении заболеваний разного профиля. В последние годы мы стараемся активно развивать отрасль медицинского туризма. Это позволяет гражданам других стран получить возможность лечения в клиниках международного уровня за доступную цену. Если вы хотите пройти лечение или обследование, обращайтесь по номеру телефона или по нашей электронной почте. 
+                      <?php the_field('napravleniya_shestoj_blok_tekst_tri');?>
                     </p>
                     <div class="survey__item-img survey__item-img--order">
-                        <img src="./images/page-treatment/treatment-7.jpg" alt="img">
+                        <img src="<?php echo get_field('napravleniya_shestoj_blok_izobrazhenie_tri')['url'];?>" alt="img">
                     </div>
+                </div>
+                <div class="survey__item">
+                    <div class="survey__item-img survey__item-img--order">
+                        <img src="<?php echo get_field('napravleniya_shestoj_blok_izobrazhenie_chetyre')['url'];?>" alt="img">
+                    </div>
+                    <p class="survey__item-text">
+                      <?php the_field('napravleniya_shestoj_blok_tekst_chetyre');?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -1255,207 +1262,33 @@ get_header();
           <div class="directions__inner">
             <div class="directions-block">
     
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-2.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Онкология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-3.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Пластическая хирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-4.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Гастроэнтерология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-5.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Дерматовенерология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-6.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Гинекология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-7.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Офтальмология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-8.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Урология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-9.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Эндокринология</p>
-                  </a>
-                </li>
               
-             
-             
+                <?php
+                  global $post;
+                  $query = new WP_Query([
+                    'post_per_page' => '30',
+                    'post_type' => 'directions-turkey'
+                  ]);
+                  if($query->have_posts()){
+                    while($query->have_posts()){
+                      $query->the_post();
+                ?>
+
                 <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-10.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Превентивная медицина</p>
+                  <a href="<?php the_permalink();?>">
+                    <img src="<?php the_post_thumbnail_url();?>" alt="img" class="directions-block__item-img">
+                    <p class="directions-block__item-text"><?php the_title();?></p>
                   </a>
                 </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-11.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Нейрохирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-12.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Отоларингология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-13.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Гематология и онкогематология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-1.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Ортопедическая хирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-14.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Кардиология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-15.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Пульмонология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-16.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Реабилитационная медицина</p>
-                  </a>
-                </li>
-              
-             
-              
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-17.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Висцеральная хирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-18.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Гинекологическая онкология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-19.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Гепатология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-20.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Кардиохирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-21.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Ревматология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-22.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Сосудистая хирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-23.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Челюстно-лицевая хирургия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-24.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Внутренняя медицина</p>
-                  </a>
-                </li>
-              
-            
-            
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-25.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Диабетология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-26.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Лечение зависимостей</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-27.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Нефрология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-28.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Психосоматика</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-29.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Бариатрия</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-30.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Аллергология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-31.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Стоматология</p>
-                  </a>
-                </li>
-                <li class="directions-block__item list-item">
-                  <a href="#">
-                    <img src="./images/directionsicon/directions-32.svg" alt="img" class="directions-block__item-img">
-                    <p class="directions-block__item-text">Лучевая терапия</p>
-                  </a>
-                </li>
+                  <?php }
+                  }
+                      
+                      else{
+                          'Постов нет';
+                      } 
+                      wp_reset_postdata();
+                  ?>
+          
              
               
             </div>
@@ -1513,17 +1346,17 @@ get_header();
         <div class="container">
             <div class="liv__box medicine-liv-clinic">
                 <div class="liv__box-img">
-                  <img src="./images/liv/liv.jpg" alt="img">
+                  <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv.jpg" alt="img">
                 </div>
                 <div class="liv__box-content">
                   <div class="liv__box-title">Клиника LIV</div>
                   <div class="liv__box-subtitle"> Стамбул, Турция</div>
                   <div class="liv__box-star">
-                    <img src="./images/liv/liv-star.svg" alt="img">
-                    <img src="./images/liv/liv-star.svg" alt="img">
-                    <img src="./images/liv/liv-star.svg" alt="img">
-                    <img src="./images/liv/liv-star.svg" alt="img">
-                    <img src="./images/liv/liv-star.svg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-star.svg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-star.svg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-star.svg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-star.svg" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/liv/liv-star.svg" alt="img">
                     <p class="liv__box-star-text">11 отзывов</p>
                   </div>
                   <p class="liv__box-text">

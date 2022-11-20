@@ -59,7 +59,7 @@ get_header();
           </div>
         </div>
       </section>
-      <div class="heading-bottom">
+      <!-- <div class="heading-bottom">
         <div class="container">
           <div class="heading-info">
             <div class="heading-info__title">Информация по лечению</div>
@@ -81,7 +81,7 @@ get_header();
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     
 
     <div class="treatment">

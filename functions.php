@@ -224,6 +224,41 @@ register_post_type('directions', array(
 ) );
 
 
+register_post_type('directions-turkey', array(
+	'labels'             => array(
+		'name'               => __('Направления в Турции'), // Основное название типа записи
+		'singular_name'      => __('Направления в Турции'), // отдельное название записи типа Book
+		'add_new'            => __('Добавить Направления в Турции'),
+		'add_new_item'       => __('Добавить новые Направления в Турции'),
+		'edit_item'          => __('Редактировать Направления в Турции'),
+		'new_item'           => __('Новые Направления в Турции'),
+		'view_item'          => __('Посмотреть Направления в Турции'),
+		'search_items'       => __('Найти Направления в Турции'),
+		'not_found'          => __('Направлений в Турции не найдено'),
+		'not_found_in_trash' => __('В корзине услуг не найдено'),
+		'parent_item_colon'  => __(''),
+		'menu_name'          => __('Направления медицины в Турции')
+  
+	  ),
+	'public'             => true,
+	'has_archive'        => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => true,
+	'capability_type'    => 'post',
+	
+	'menu_icon'			 => 'dashicons-insert',
+	'hierarchical'       => true,
+	'menu_position'      => null,
+	// 'taxonomies'          => array( 'category' ),//Добавляем категории
+	'supports'           => array('title','excerpt','editor','thumbnail','custom-fields')
+  ) );
+  
+  
+
+
 
 
 }
