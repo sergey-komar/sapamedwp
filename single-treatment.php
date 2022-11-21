@@ -827,7 +827,7 @@ get_header();
 
       <div class="medicine">
         <div class="container">
-              <div class="medicine__inner">
+            <div class="medicine__inner">
                 <div class="medicine__top">
                     <?php
                       global $post;
@@ -880,7 +880,7 @@ get_header();
                       wp_reset_postdata();
                     ?>
                 </div>
-              </div>
+            </div>
     
           <button class="medicine__btn">Показать еще 12</button>
         </div>

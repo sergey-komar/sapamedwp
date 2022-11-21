@@ -2,14 +2,16 @@
 get_header();
 ?>
 <div class="container">
+
   <h1 class="search_page">
         <?php
         /* translators: %s: search query. */
-        printf( esc_html__( 'Результаты поиска по фразе: %s' ), '<span>' . get_search_query() . '</span>' );
+        printf( esc_html__( 'Результаты поиска по фразе: %s'), '<span>' . get_search_query() . '</span>' );
         ?>
     </h1>
 </div>
-
+ 
+    
 
 <main class="main">
     <div class="container">
@@ -59,41 +61,24 @@ get_header();
           </div>
         </div>
       </section>
-      <!-- <div class="heading-bottom">
-        <div class="container">
-          <div class="heading-info">
-            <div class="heading-info__title">Информация по лечению</div>
-            <div class="heading-info__inner">
-              <div class="heading-info__item">
-                <div class="heading-info__item-title">Приём пациентов</div>
-                <p class="heading-info__item-text">
-                  Осуществляется прием всех категорий пациентов. Ношение маски в кабинете врача является обязательным условием.
-                </p>
-              </div>
-              <div class="heading-info__item">
-                <div class="heading-info__item-title">Правила въезда в страну</div>
-                <p class="heading-info__item-text">Лицам старше 12 лет необходимо предъявить либо ПЦР-тест (не старше 72 часов), либо тест на антиген (не старше 48 часов), либо сертификат о полной вакцинации, либо документ о выздоровлении (не старше 6 месяцев).</p>
-              </div>
-              <div class="heading-info__item">
-                <div class="heading-info__item-title">Медицинские визы</div>
-                <p class="heading-info__item-text">Граждане 78 стран освобождены от визы на срок от 30 до 90 дней, еще 43 страны могут получить электронную визу. За уточнением правил визового режима для вашей страны обратитесь к менеджеру компании.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     
-
     <div class="treatment">
       <div class="container">
               <div class="treatment__title">
               <?php the_excerpt();?> 
               </div>
+              <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <div class="treatment__block">
               <div class="treatment__content">
                 <?php the_content();?>
               </div>
             </div>
+            <?php endwhile; else: ?>
+          <div class="container">
+            <div class="page-title">Ничего не найдено</div>
+            <div class="page-content">Извините, но ничего не соответствует условиям вашего поиска. Пожалуйста, попытайтесь снова с другими ключевыми словами.</div>
+          </div>
+            <?php endif; ?>   
 
             <a href="<?php the_permalink()?>" class="gynecology__btn">Читать подробнее</a>
       </div>
@@ -300,8 +285,11 @@ get_header();
             </div>
         </div>
       </div>
-
+     
+    
+   
    </main>
+   
 <?php
 get_footer();
 ?>

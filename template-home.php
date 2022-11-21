@@ -866,152 +866,56 @@ get_header();
     <div class="container">
       <div class="medicine__inner">
         <div class="medicine__top">
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-1.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Пластическая хирургия</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-2.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Флебология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-3.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Хирургия</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-4.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Косметология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-5.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Стоматология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-6.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Гинекология и интимная пластика для женщин</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-7.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Кардиология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-8.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Узи диагностика</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-9.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">МРТ</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-10.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Урология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-11.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Эндокринология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-12.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Проктология и  гастроэнтерология</p>
-          </div>
+                    <?php
+                      global $post;
+                      $query = new WP_Query([
+                        'posts_per_page' => '30',
+                        'post_type' => 'treatment'
+                      ]);
+                      if($query->have_posts()){
+                        while($query->have_posts()){
+                          $query->the_post();
+                      ?>
+                        <a href="<?php the_permalink();?>" class="medicine__item">
+                          <div class="medicine__item-img">
+                            <img src="<?php the_post_thumbnail_url();?>" alt="img">
+                          </div>
+                          <p class="medicine__item-text"><?php the_title();?></p>
+                        </a>
+                        <?php
+                        }
+                      }
+                      else{
+                        
+                      }
+                        wp_reset_postdata();
+                      ?>
         </div>
         <div class="medicine__bottom hide">
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-1.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Пластическая хирургия</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-2.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Флебология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-3.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Хирургия</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-4.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Косметология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-5.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Стоматология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-6.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Гинекология и интимная пластика для женщин</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-7.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Кардиология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-8.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Узи диагностика</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-9.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">МРТ</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-10.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Урология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-11.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Эндокринология</p>
-          </div>
-          <div class="medicine__item">
-            <div class="medicine__item-img">
-              <img src="./images/medicine/medicine-12.jpg" alt="img">
-            </div>
-            <p class="medicine__item-text">Проктология и  гастроэнтерология</p>
-          </div>
+                      <?php
+                      global $post;
+                      $query = new WP_Query([
+                        'posts_per_page' => '30',
+                        'post_type' => 'treatment-hide'
+                      ]);
+                      if($query->have_posts()){
+                        while($query->have_posts()){
+                          $query->the_post();
+                      ?>
+                    <a href="<?php the_permalink();?>" class="medicine__item">
+                      <div class="medicine__item-img">
+                        <img src="<?php the_post_thumbnail_url();?>" alt="img">
+                      </div>
+                      <p class="medicine__item-text"><?php the_title();?></p>
+                    </a>
+                    <?php
+                    }
+                          }
+                      else{
+                        echo 'Постов нет';
+                      }
+                      wp_reset_postdata();
+                    ?>
         </div>
       </div>
 

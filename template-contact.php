@@ -54,22 +54,9 @@ get_header();
                 </div>
             </div>
             <div class="contact__form">
-                <form class="heading__form">
-                    <div class="heading__form-title">
-                      Заполните свои данные, чтобы получить бесплатную консультацию
-                    </div>
-                    <input type="text" class="heading__form-input" placeholder="Имя">
-                    <div class="heading__form-wrapper">
-                      <input type="text" class="heading__form-input" placeholder="Номер телефона">
-                    </div>
-                    <input type="text" class="heading__form-input" placeholder="Email">
-                    <textarea class="heading__form-textarea" ></textarea>
-                    <button class="heading__form-btn button">Отправить заявку</button>
-                    <p class="heading__form-text">
-                      Оставляя заявку на сайте вы соглашаетесь 
-                      с политикой конфиденциальности
-                    </p>
-                  </form>
+                <div class="heading__form">
+                    <?php echo do_shortcode('[contact-form-7 id="333" title="Страница контакты"]');?>
+                  </div>
             </div>
         </div>
     </div>

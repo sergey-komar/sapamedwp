@@ -23,7 +23,9 @@ add_action('after_setup_theme', 'sapamed_setup');
     array(
         'menu-header' => esc_html__( 'Шапка', 'sapamed' ),
         'menu-footer' => esc_html__( 'Подвал', 'sapamed' ) ,
-		'menu-footer-page' => esc_html__( 'Подвал-страницы', 'sapamed' ) 
+		'menu-footer-page' => esc_html__( 'Подвал-страницы', 'sapamed' ),
+		'menu-footermobile' => esc_html__( 'Подвал мобильный', 'sapamed' ),
+		'menu-page-mobile' => esc_html__( 'Записи меню подвал', 'sapamed' ),     
     )
 );
 
@@ -255,6 +257,75 @@ register_post_type('directions-turkey', array(
 	// 'taxonomies'          => array( 'category' ),//Добавляем категории
 	'supports'           => array('title','excerpt','editor','thumbnail','custom-fields')
   ) );
+
+
+  register_post_type('treatment', array(
+	'labels'             => array(
+		'name'               => __('Направления лечения'), // Основное название типа записи
+		'singular_name'      => __('Направления лечения'), // отдельное название записи типа Book
+		'add_new'            => __('Добавить Направления лечения'),
+		'add_new_item'       => __('Добавить новые Направления лечения'),
+		'edit_item'          => __('Редактировать Направления лечения'),
+		'new_item'           => __('Новые Направления в Турции'),
+		'view_item'          => __('Посмотреть Направления лечения'),
+		'search_items'       => __('Найти Направления лечения'),
+		'not_found'          => __('Направлений лечения не найдено'),
+		'not_found_in_trash' => __('В корзине услуг не найдено'),
+		'parent_item_colon'  => __(''),
+		'menu_name'          => __('Направления  лечения')
+  
+	  ),
+	'public'             => true,
+	'has_archive'        => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => true,
+	'capability_type'    => 'post',
+	
+	'menu_icon'			 => 'dashicons-insert',
+	'hierarchical'       => true,
+	'menu_position'      => null,
+	// 'taxonomies'          => array( 'category' ),//Добавляем категории
+	'supports'           => array('title','excerpt','editor','thumbnail','custom-fields')
+  ) );
+
+  register_post_type('treatment-hide', array(
+	'labels'             => array(
+		'name'               => __('Направления лечения скрытый блок'), // Основное название типа записи
+		'singular_name'      => __('Направления лечения скрытый блок'), // отдельное название записи типа Book
+		'add_new'            => __('Добавить Направления лечения скрытый блок'),
+		'add_new_item'       => __('Добавить новые Направления лечения скрытый блок'),
+		'edit_item'          => __('Редактировать Направления лечения скрытый блок'),
+		'new_item'           => __('Новые Направления в Турции'),
+		'view_item'          => __('Посмотреть Направления лечения скрытый блок'),
+		'search_items'       => __('Найти Направления лечения скрытый блок'),
+		'not_found'          => __('Направлений лечения не найдено'),
+		'not_found_in_trash' => __('В корзине услуг не найдено'),
+		'parent_item_colon'  => __(''),
+		'menu_name'          => __('Направления лечения скрытый блок')
+  
+	  ),
+	'public'             => true,
+	'has_archive'        => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => true,
+	'capability_type'    => 'post',
+	
+	'menu_icon'			 => 'dashicons-insert',
+	'hierarchical'       => true,
+	'menu_position'      => null,
+	// 'taxonomies'          => array( 'category' ),//Добавляем категории
+	'supports'           => array('title','excerpt','editor','thumbnail','custom-fields')
+  ) );
+  
+  
+
+
   
   
 

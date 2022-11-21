@@ -61,7 +61,7 @@
               Звонок по Казахстану бесплатный
             </p>
           </div>
-          <button class="header__right-btn">Записаться на прием</button>
+          <button class="header__right-btn" data-modal>Записаться на прием</button>
          
         </div>
         <div class="header__right-bottom">
