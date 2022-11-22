@@ -67,18 +67,13 @@ get_header();
               <div class="treatment__title">
               <?php the_excerpt();?> 
               </div>
-              <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+           
             <div class="treatment__block">
               <div class="treatment__content">
                 <?php the_content();?>
               </div>
             </div>
-            <?php endwhile; else: ?>
-          <div class="container">
-            <div class="page-title">Ничего не найдено</div>
-            <div class="page-content">Извините, но ничего не соответствует условиям вашего поиска. Пожалуйста, попытайтесь снова с другими ключевыми словами.</div>
-          </div>
-            <?php endif; ?>   
+        
 
             <a href="<?php the_permalink()?>" class="gynecology__btn">Читать подробнее</a>
       </div>

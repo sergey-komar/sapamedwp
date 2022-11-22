@@ -12,11 +12,10 @@ get_header();
         <div class="heading__inner-wrapper">
           <div class="heading-block">
             <h1 class="heading-block__title">
-              Медицинский туризм в Турции 
-                для граждан Казахстана 
+            <?php the_field('zagolovok_glavnyj_strnaicza_vrachi');?>
             </h1>
             <p class="heading-block__text">
-              Мы создали сочетание современных технологий и принципов качественного и оперативного обслуживания
+            <?php the_field('stranicza_vrachi_podzagolovok');?>
             </p>
             <div class="heading-block__inner">
               <div class="heading-block__item">
